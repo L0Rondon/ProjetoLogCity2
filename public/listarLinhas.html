@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="assets/css/listarLinhas.css">
 </head>
 
 <body>
@@ -17,7 +16,6 @@
             <ul>
                 <li></li>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="listarLinhas.html">Linhas</a></li>
                 <li class="dropdown">
                     <a href="sobre.html" class="dropbtn">Sobre</a>
                     <ul class="dropdown-content">
@@ -33,17 +31,72 @@
                         <li><a href="cadastroOni.html">Linha/Ônibus</a></li>
                     </ul>
                 </li>
-                
-                
+
+
             </ul>
         </nav>
         <br>
         <h1>LogCity</h1>
     </header>
     <main>
-       <img src="assets/img/banner1.png" alt="">
-    </main>
+        <div class="container">
+            <h1>Lista de Tarefas</h1>
+            <table id="tabelaTarefas">
+                <thead>
+                    <tr>
+                        <th>Nome da Tarefa</th>
+                        <th>Descrição</th>
+                        <th>Data de Entrega</th>
+                        <th>Responsável</th>
+                        <th>Status</th>
+                        <th>Ações</th> <!-- Nova coluna de ações -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- As tarefas serão inseridas aqui dinamicamente -->
+                </tbody>
+            </table>
 
+
+            <!-- Formulário para editar a tarefa -->
+            <div id="formularioEdicao" style="display:none;">
+                <h2>Editar Tarefa</h2>
+                <form id="formEditarTarefa">
+                    <input type="hidden" id="tarefaId">
+
+
+                    <label for="editarNome">Nome da Tarefa:</label>
+                    <input type="text" id="editarNome" required>
+
+
+                    <label for="editarDescricao">Descrição:</label>
+                    <textarea id="editarDescricao" required></textarea>
+
+
+                    <label for="editarDataEntrega">Data de Entrega:</label>
+                    <input type="date" id="editarDataEntrega" required>
+
+
+                    <label for="editarResponsavel">Responsável:</label>
+                    <select id="editarResponsavel" required></select>
+                    <!-- Usamos um select para listar os responsáveis -->
+
+
+                    <label for="editarStatus">Status:</label>
+                    <select id="editarStatus">
+                        <option value="incompleta">Incompleta</option>
+                        <option value="completa">Concluída</option>
+                    </select>
+
+
+                    <button type="submit">Salvar Alterações</button>
+                    <button type="button" id="cancelarEdicao">Cancelar</button>
+                </form>
+            </div>
+
+
+        </div>
+    </main>
     <footer id="InfoContat">
         <div class="footer-container">
             <div class="footer-section">
@@ -78,6 +131,8 @@
         </div>
         <a href="#Menu" title="Titulo"><img src="assets/img/favicon.ico" alt="iconetopo">
     </footer>
+
+    <script src="assets/js/listarLinhas.js"></script>
 </body>
 
 </html>
